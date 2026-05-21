@@ -13,26 +13,33 @@
       ];
       perSystem =
         { pkgs, ... }:
+        let
+          commonPkgs = with pkgs; [
+            llvmPackages_22.clang
+            llvmPackages_22.clang-tools
+            llvmPackages_22.lldb
+
+            cmake
+            ninja
+            gnumake
+            pkg-config
+            gtest
+          ];
+        in
         {
-          devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              llvmPackages_22.clang
-              llvmPackages_22.clang-tools
-              llvmPackages_22.lldb
-              
-              cmake
-              ninja
-              gnumake
-
-              valgrind
-              perf
-
-              cppcheck
-              pkg-config
-              catch2_3
-              
-              nixd
-            ];
+          devShells = {
+            default = pkgs.mkShell {
+              packages = commonPkgs
+                ++ (with pkgs; [
+                  valgrind
+                  perf
+                  cppcheck
+                  nixd
+                ]);
+            };
+            ci = pkgs.mkShell {
+              packages = commonPkgs;
+            };
           };
         };
     };

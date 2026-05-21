@@ -16,7 +16,6 @@ target_compile_options(spectra_eq_compile_options INTERFACE
     >
     $<$<CONFIG:Release>:
     -O3
-    -march=native
     -funroll-loops
     -DNDEBUG
     >
@@ -30,6 +29,7 @@ target_link_options(spectra_eq_compile_options INTERFACE
 
 set(CORE_LIB_SOURCES
     fft/fft.cpp
+    fft/fft_scalar.cpp
 )
 add_library(spectra_eq_core STATIC ${CORE_LIB_SOURCES})
 add_library(${CMAKE_PROJECT_NAME}::core ALIAS spectra_eq_core)
