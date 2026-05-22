@@ -44,4 +44,24 @@ set(EXE_SOURCES
     main.cpp
 )
 add_executable(spectra_eq ${EXE_SOURCES})
-target_link_libraries(spectra_eq PRIVATE ${CMAKE_PROJECT_NAME}::core)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(MINIAUDIO REQUIRED miniaudio)
+pkg_check_modules(ALSA REQUIRED alsa)
+pkg_check_modules(PULSE REQUIRED libpulse)
+pkg_check_modules(JACK REQUIRED jack)
+
+target_include_directories(spectra_eq PRIVATE
+        ${MINIAUDIO_INCLUDE_DIRS}
+        ${ALSA_INCLUDE_DIRS}
+        ${PULSE_INCLUDE_DIRS}
+        ${JACK_INCLUDE_DIRS}
+)
+target_link_libraries(spectra_eq PRIVATE
+        ${CMAKE_PROJECT_NAME}::core
+        ${MINIAUDIO_LINK_LIBRARIES}
+        ${ALSA_LINK_LIBRARIES}
+        ${PULSE_LINK_LIBRARIES}
+        ${JACK_LINK_LIBRARIES}
+)
+target_compile_options(spectra_eq PRIVATE ${MINIAUDIO_CFLAGS_OTHER})

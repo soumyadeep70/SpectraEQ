@@ -24,6 +24,11 @@
             gnumake
             pkg-config
             gtest
+            miniaudio
+            alsa-lib
+            libpulseaudio
+            libjack2
+            sndio
           ];
         in
         {
