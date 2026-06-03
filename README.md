@@ -1,15 +1,17 @@
-<h1 align="center">
-  <img src="src/ui/assets/app_icon.png" alt="SpectraEQ" height="50" width="50" align="center" />
-  SpectraEQ
-</h1>
+<div align="center">
+  <h3>
+    <img src="src/ui/assets/app_icon.png" alt="SpectraEQ Logo" height="50" align="middle" />
+    <b>SpectraEQ</b>
+  </h3>
+</div>
 
 <div align="center">
   <a href="https://github.com/soumyadeep70/SpectraEQ/actions">
     <img src="https://img.shields.io/github/actions/workflow/status/soumyadeep70/SpectraEQ/tests.yml?branch=main&label=tests&style=flat-square" alt="Test Status" />
-  </a>
+  </a>&nbsp;&nbsp;
   <a href="https://github.com/soumyadeep70/SpectraEQ/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/soumyadeep70/SpectraEQ?style=flat-square" alt="License" />
-  </a>
+  </a>&nbsp;&nbsp;
   <img src="https://img.shields.io/github/last-commit/soumyadeep70/SpectraEQ?style=flat-square" alt="Last Commit" />
 </div>
 
