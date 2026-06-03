@@ -4,11 +4,12 @@
 </h1>
 
 <div align="center">
-  <!-- Test / CI Status -->
   <a href="https://github.com/soumyadeep70/SpectraEQ/actions">
     <img src="https://img.shields.io/github/actions/workflow/status/soumyadeep70/SpectraEQ/tests.yml?branch=main&label=tests&style=flat-square" alt="Test Status" />
   </a>
-  <!-- Last Commit -->
+  <a href="https://github.com/soumyadeep70/SpectraEQ/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/soumyadeep70/SpectraEQ?style=flat-square" alt="License" />
+  </a>
   <img src="https://img.shields.io/github/last-commit/soumyadeep70/SpectraEQ?style=flat-square" alt="Last Commit" />
 </div>
 
